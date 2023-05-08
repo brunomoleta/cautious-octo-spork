@@ -1,0 +1,43 @@
+
+:root {
+  --darkCyan: hsl(185, 75%, 39%);
+  --card-cyan: #41CBD3;
+  --desatBlue: hsl(229, 23%, 23%);
+  --grayBlue: hsl(227, 10%, 46%);
+  --darkGray: hsl(0, 0%, 59%);
+  --light-grey: #E8E9EC;
+  --boxShadow: #0000003e;
+  --bold-font: 700;
+  --light-font: 400;
+  --card-height: 36rem;
+  --card-width: 32rem;
+  --large-font: 1.8rem;
+  --small-font: 1.4rem;
+  --smaller-font: 1.0rem;
+  
+  --card-radius: 1.5rem;
+
+}
+
+body {
+  font-size: var(--large-font);
+  font-family: "Kumbh Sans", sans-serif;
+}
+/* 
+- Mobile: 375px
+- Desktop: 1440px */
+
+
+.attribution {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* .attribution a {
+  color: hsl(228, 45%, 44%);
+} */
+
+address{
+  font-style: normal;
+}
+
