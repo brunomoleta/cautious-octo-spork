@@ -26,7 +26,7 @@ Frontend Mentor helps you improve your coding skills by building realistic proje
 
 ### Screenshot
 
-[imagem](./images/Screenshot_1.jpg)
+![](./images/Screenshot_1.jpg)
 
 
 ### Links
