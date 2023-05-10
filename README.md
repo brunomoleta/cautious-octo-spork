@@ -73,7 +73,7 @@ const cardBottomSec = document.querySelector(
     `.${insideMainClassNames.at(-1)}`
   );
 
-  const insideCardBttomLi = "span";
+  const insideCardBttomLi = ["h3", "span"];
   const liClass = "user-info-li-item";
   const spanClasses = ["bold-info", "aux-text"];
   const bottomInfo = [
@@ -90,10 +90,10 @@ const cardBottomSec = document.querySelector(
     const li = document.createElement(`li`);
     li.classList.add(`${liClass}`);
     for (let j = 0; j < bottomInfo[i].length; j++) {
-      const liSpan = document.createElement(`${insideCardBttomLi}`);
-      li.appendChild(liSpan);
-      liSpan.innerText = `${bottomInfo[i][j]}`;
-      liSpan.classList.add(`${spanClasses[j]}`);
+      const liItem = document.createElement(`${insideCardBttomLi[j]}`);
+      li.appendChild(liItem);
+      liItem.innerText = `${bottomInfo[i][j]}`;
+      liItem.classList.add(`${spanClasses[j]}`);
     }
     ul.appendChild(li);
   }
@@ -102,25 +102,25 @@ Which results in the following html:
 ```html
 <ul>
   <li class="user-info-li-item">
-    <span class="bold-info">
+    <h2 class="bold-info">
       80K
-    </span>
+    </h2>
     <span class="aux-text">
       Followers
     </span>
   </li> 
   <li class="user-info-li-item">
-    <span class="bold-info">
+    <h2 class="bold-info">
       803K
-    </span>
+    </h2>
     <span class="aux-text">
       Likes
     </span>
   </li> 
   <li class="user-info-li-item">
-    <span class="bold-info">
+    <h2 class="bold-info">
       1.4K
-    </span>
+    </h2>
     <span class="aux-text">
       Photos
     </span>
@@ -142,7 +142,7 @@ don't feel strange anymore.
 
 ### Continued development
 
-Figure out ways to append elements created in Javascript at wherever position desired, not only on the default place, which is at the bottom.
+Refactor the functions with methods.
 
 
 ### Useful resources

@@ -95,6 +95,7 @@ a {
 h1 {
   font-size: inherit;
   font-weight: inherit; 
+  display: none;
 }
 
 ul {

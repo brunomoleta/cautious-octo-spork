@@ -1,43 +1,39 @@
 const topInfo = ["Victor Crest", "26", "London"];
 
 const cardTags = ["main"];
-const cardTagsClasses = ["card", "attribution"];
+const cardTagsClasses = ["card"];
 
-const insideMainTags = ["section", "hr", "section"];
-const insideMainClassNames = ["card-top", "", "card-bottom"];
-
-const insideFooter = ["ul"];
+const insideMainTags = ["h1", "section", "hr", "section"];
+const insideMainClassNames = ["hidden", "card-top", "", "card-bottom"];
 
 const makeCard = () => {
   // Primeira parte
   // create main
   const body = document.body;
 
-  for (let i = 0; i < cardTags.length; i++) {
-    const tag = document.createElement(`${cardTags[i]}`);
-    tag.classList.add(`${cardTagsClasses[i]}`);
-    body.appendChild(tag);
-  }
+  const tag = document.createElement(`${cardTags[0]}`);
+  tag.classList.add(`${cardTagsClasses[0]}`);
+  body.insertBefore(tag, body.children[0]);
 
   const main = document.querySelector("main");
 
   //   create the two sections and hr
   for (let i = 0; i < insideMainTags.length; i++) {
     const mainTags = document.createElement(`${insideMainTags[i]}`);
-    if (insideMainTags[i] !== "hr") {
-      mainTags.classList.add(`${insideMainClassNames[i]}`);
-    }
+  if (insideMainTags[i] !== "hr"){
+    mainTags.classList.add(`${insideMainClassNames[i]}`);
+  }
     main.appendChild(mainTags);
   }
 
-  //   Card Top
+  // //   Card Top
 
   const insideCardTop = ["img", "div"];
   const insideCardTopClasses = ["user-img", "user-info"];
   const imgAttribute = ["src", "alt"];
   const imgAttributeData = ["./images/image-victor.jpg", "user image"];
 
-  const firstSection = document.querySelector(`.${insideMainClassNames[0]}`);
+  const firstSection = document.querySelector(`.${insideMainClassNames[1]}`);
 
   for (let i = 0; i < insideCardTop.length; i++) {
     const insideCardTopElement = document.createElement(`${insideCardTop[i]}`);
@@ -66,7 +62,7 @@ const makeCard = () => {
   }
 
   const insideUserTags = [
-    ["h1", "p"],
+    ["h2", "p"],
     ["user-name", "user-age"],
   ];
 
@@ -80,13 +76,13 @@ const makeCard = () => {
   const userAdress = document.querySelector(".user-adress");
   userAdress.innerText = topInfo.at(-1);
 
-  // // card Bottom
+  // // // card Bottom
 
   const cardBottomSec = document.querySelector(
     `.${insideMainClassNames.at(-1)}`
   );
 
-  const insideCardBttomLi = "span";
+  const insideCardBttomLi = ["h3", "span"];
   const liClass = "user-info-li-item";
   const spanClasses = ["bold-info", "aux-text"];
   const bottomInfo = [
@@ -103,35 +99,12 @@ const makeCard = () => {
     const li = document.createElement(`li`);
     li.classList.add(`${liClass}`);
     for (let j = 0; j < bottomInfo[i].length; j++) {
-      const liSpan = document.createElement(`${insideCardBttomLi}`);
-      li.appendChild(liSpan);
-      liSpan.innerText = `${bottomInfo[i][j]}`;
-      liSpan.classList.add(`${spanClasses[j]}`);
+      const liItem = document.createElement(`${insideCardBttomLi[j]}`);
+      li.appendChild(liItem);
+      liItem.innerText = `${bottomInfo[i][j]}`;
+      liItem.classList.add(`${spanClasses[j]}`);
     }
     ul.appendChild(li);
   }
-
-  // // footer
-  // const ulFooter = document.querySelector("#footer-list");
-  // // const l = "li";
-  // const textInFooter = [
-  //   [
-  //   "Challenge by Frontend Mentor",
-  //   ["href", "https://www.frontendmentor.io?ref=challenge"]],
-  //   [
-  //     "Coded by Bruno Moleta Santos",
-  //     ["href", "https://github.com/brunomoleta"],
-  //   ],
-  // ];
-
-  // for (let i = 0; i < textInFooter.length; i++) {
-  //   const li = document.createElement("li");
-  //   for (let j=0; j<src.length;j++){
-  //     li.innerText = `${textInFooter[0][i]}`;
-  //   }
-  //   ulFooter.appendChild(li);
-  //   // li.setAttribute(`${src[i][j]}`)
-  //   // }
-  
-}
+};
 makeCard();
