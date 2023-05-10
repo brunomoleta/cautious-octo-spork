@@ -4,7 +4,7 @@ const cardTags = ["main"];
 const cardTagsClasses = ["card"];
 
 const insideMainTags = ["h1", "section", "hr", "section"];
-const insideMainClassNames = ["hidden", "card-top", "", "card-bottom"];
+const insideMainClassNames = ["sr-only", "card-top", "", "card-bottom"];
 
 const makeCard = () => {
   // Primeira parte
@@ -20,9 +20,9 @@ const makeCard = () => {
   //   create the two sections and hr
   for (let i = 0; i < insideMainTags.length; i++) {
     const mainTags = document.createElement(`${insideMainTags[i]}`);
-  if (insideMainTags[i] !== "hr"){
-    mainTags.classList.add(`${insideMainClassNames[i]}`);
-  }
+    if (insideMainTags[i] !== "hr") {
+      mainTags.classList.add(`${insideMainClassNames[i]}`);
+    }
     main.appendChild(mainTags);
   }
 
@@ -31,7 +31,7 @@ const makeCard = () => {
   const insideCardTop = ["img", "div"];
   const insideCardTopClasses = ["user-img", "user-info"];
   const imgAttribute = ["src", "alt"];
-  const imgAttributeData = ["./images/image-victor.jpg", "user image"];
+  const imgAttributeData = ["./images/image-victor.jpg", `${topInfo[0]}`];
 
   const firstSection = document.querySelector(`.${insideMainClassNames[1]}`);
 
@@ -82,7 +82,12 @@ const makeCard = () => {
     `.${insideMainClassNames.at(-1)}`
   );
 
-  const insideCardBttomLi = ["h3", "span"];
+  const insideBottomSection = ["h2", "ul"];
+  const insideBottomSectionClasses = [
+    `${insideMainClassNames[0]}`,
+    "user-info-list",
+  ];
+  const insideCardBttomLi = ["p", "span"];
   const liClass = "user-info-li-item";
   const spanClasses = ["bold-info", "aux-text"];
   const bottomInfo = [
@@ -91,11 +96,17 @@ const makeCard = () => {
     ["1.4K", "Photos"],
   ];
 
-  const ul = document.createElement("ul");
-  ul.classList.add("user-info-list");
-  cardBottomSec.appendChild(ul);
+  for (let i = 0; i < insideBottomSection.length; i++) {
+    const element = document.createElement(`${insideBottomSection[i]}`);
+    element.classList.add(`${insideBottomSectionClasses[i]}`);
+    cardBottomSec.appendChild(element);
+  }
+
+  const profileStats = document.querySelector(".card-bottom>h2");
+  profileStats.innerText = "Profile Statistics";
 
   for (let i = 0; i < bottomInfo.length; i++) {
+    const unList = document.querySelector(`.${insideBottomSectionClasses[1]}`);
     const li = document.createElement(`li`);
     li.classList.add(`${liClass}`);
     for (let j = 0; j < bottomInfo[i].length; j++) {
@@ -104,7 +115,7 @@ const makeCard = () => {
       liItem.innerText = `${bottomInfo[i][j]}`;
       liItem.classList.add(`${spanClasses[j]}`);
     }
-    ul.appendChild(li);
+    unList.appendChild(li);
   }
 };
 makeCard();

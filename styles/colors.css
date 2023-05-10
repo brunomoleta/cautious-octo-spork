@@ -16,17 +16,7 @@ body {
   color: var(--darkGray);
 }
 
-.user-name,
-.bold-info {
-  color: var(--desatBlue);
-}
 
 .card-top::after {
   background-color: var(--light-grey);
-}
-
-/* bottom part of the card */
-
-a {
-  color: var(--light-grey);
 }

@@ -27,3 +27,12 @@ a {
 .aux-text {
   color: var(--darkGray);
 }
+
+.user-name,
+.bold-info {
+  color: var(--desatBlue);
+}
+
+a {
+  color: var(--light-grey);
+}

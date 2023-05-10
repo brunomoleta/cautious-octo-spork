@@ -95,7 +95,6 @@ a {
 h1 {
   font-size: inherit;
   font-weight: inherit; 
-  display: none;
 }
 
 ul {
@@ -116,4 +115,8 @@ strong {
 
 address{
   font-style: normal;
+}
+
+.sr-only {
+  display: none;
 }

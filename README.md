@@ -73,7 +73,12 @@ const cardBottomSec = document.querySelector(
     `.${insideMainClassNames.at(-1)}`
   );
 
-  const insideCardBttomLi = ["h3", "span"];
+  const insideBottomSection = ["h2", "ul"];
+  const insideBottomSectionClasses = [
+    `${insideMainClassNames[0]}`,
+    "user-info-list",
+  ];
+  const insideCardBttomLi = ["p", "span"];
   const liClass = "user-info-li-item";
   const spanClasses = ["bold-info", "aux-text"];
   const bottomInfo = [
@@ -82,11 +87,17 @@ const cardBottomSec = document.querySelector(
     ["1.4K", "Photos"],
   ];
 
-  const ul = document.createElement("ul");
-  ul.classList.add("user-info-list");
-  cardBottomSec.appendChild(ul);
+  for (let i = 0; i < insideBottomSection.length; i++) {
+    const element = document.createElement(`${insideBottomSection[i]}`);
+    element.classList.add(`${insideBottomSectionClasses[i]}`);
+    cardBottomSec.appendChild(element);
+  }
+
+  const profileStats = document.querySelector(".card-bottom>h2");
+  profileStats.innerText = "Profile Statistics";
 
   for (let i = 0; i < bottomInfo.length; i++) {
+    const unList = document.querySelector(`.${insideBottomSectionClasses[1]}`);
     const li = document.createElement(`li`);
     li.classList.add(`${liClass}`);
     for (let j = 0; j < bottomInfo[i].length; j++) {
@@ -95,32 +106,33 @@ const cardBottomSec = document.querySelector(
       liItem.innerText = `${bottomInfo[i][j]}`;
       liItem.classList.add(`${spanClasses[j]}`);
     }
-    ul.appendChild(li);
+    unList.appendChild(li);
   }
   ```
 Which results in the following html:
 ```html
+<h2>
 <ul>
   <li class="user-info-li-item">
-    <h2 class="bold-info">
+    <p class="bold-info">
       80K
-    </h2>
+    </p>
     <span class="aux-text">
       Followers
     </span>
   </li> 
   <li class="user-info-li-item">
-    <h2 class="bold-info">
+    <p class="bold-info">
       803K
-    </h2>
+    </p>
     <span class="aux-text">
       Likes
     </span>
   </li> 
   <li class="user-info-li-item">
-    <h2 class="bold-info">
+    <p class="bold-info">
       1.4K
-    </h2>
+    </p>
     <span class="aux-text">
       Photos
     </span>
