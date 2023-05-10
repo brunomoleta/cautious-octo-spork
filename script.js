@@ -25,6 +25,7 @@ const makeCard = () => {
     }
     main.appendChild(mainTags);
   }
+  document.querySelector("h1").innerText = (`${topInfo[0]}'s Card Profile`)
 
   // //   Card Top
 
