@@ -1,55 +1,54 @@
-const info = [
-  ["Victor Crest", "26", "London"],
-  {
-    followers: "80K",
-    likes: "803K",
-    photos: "1.4K",
-  },
-];
+const topInfo = ["Victor Crest", "26", "London"];
 
-const makeCard = (infoArr) => {
-  // create body, main and footer
-  const body = document.querySelector("body");
+const cardTags = ["main"];
+const cardTagsClasses = ["card", "attribution"];
 
-  const main = document.createElement("main");
-  main.classList.add("card");
+const insideMainTags = ["section", "hr", "section"];
+const insideMainClassNames = ["card-top", "", "card-bottom"];
 
-  const footer = document.createElement("footer");
-  footer.classList.add("attribution");
+const insideFooter = ["ul"];
 
-  //   create card-bg-inside-card
-  const divMain = document.createElement("div");
-  divMain.id = "card-bg-inside";
-  const divFooter = document.createElement("div");
+const makeCard = () => {
+  // Primeira parte
+  // create main
+  const body = document.body;
 
-  body.append(main, footer);
-  footer.appendChild(divFooter);
-  main.appendChild(divMain);
+  for (let i = 0; i < cardTags.length; i++) {
+    const tag = document.createElement(`${cardTags[i]}`);
+    tag.classList.add(`${cardTagsClasses[i]}`);
+    body.appendChild(tag);
+  }
+
+  const main = document.querySelector("main");
 
   //   create the two sections and hr
-  const sectionClassNames = ["card-top", "card-bottom"];
-  for (let i = 0; i < infoArr.length; i++) {
-    const section = document.createElement("section");
-    main.appendChild(section);
-    section.classList.add(sectionClassNames[i]);
-    if (i === 0) {
-      const hr = document.createElement("hr");
-      main.appendChild(hr);
+  for (let i = 0; i < insideMainTags.length; i++) {
+    const mainTags = document.createElement(`${insideMainTags[i]}`);
+    if (insideMainTags[i] !== "hr") {
+      mainTags.classList.add(`${insideMainClassNames[i]}`);
     }
+    main.appendChild(mainTags);
   }
 
   //   Card Top
 
   const insideCardTop = ["img", "div"];
-  const firstSection = document.querySelector(`.${sectionClassNames[0]}`);
-
   const insideCardTopClasses = ["user-img", "user-info"];
+  const imgAttribute = ["src", "alt"];
+  const imgAttributeData = ["./images/image-victor.jpg", "user image"];
+
+  const firstSection = document.querySelector(`.${insideMainClassNames[0]}`);
+
   for (let i = 0; i < insideCardTop.length; i++) {
     const insideCardTopElement = document.createElement(`${insideCardTop[i]}`);
     insideCardTopElement.classList.add(`${insideCardTopClasses[i]}`);
     if (insideCardTop[i] === "img") {
-      insideCardTopElement.setAttribute("src", "./images/image-victor.jpg");
-      insideCardTopElement.setAttribute("alt", "user image");
+      for (let i = 0; i < imgAttribute.length; i++) {
+        insideCardTopElement.setAttribute(
+          `${imgAttribute[i]}`,
+          `${imgAttributeData[i]}`
+        );
+      }
     }
     firstSection.appendChild(insideCardTopElement);
   }
@@ -75,13 +74,64 @@ const makeCard = (infoArr) => {
   for (let i = 0; i < insideUserTags.length; i++) {
     const insideNameAgeTag = document.createElement(insideUserTags[0][i]);
     insideNameAgeTag.classList.add(insideUserTags[1][i]);
-    insideNameAgeTag.innerText = `${info[0][i]}`;
+    insideNameAgeTag.innerText = `${topInfo[i]}`;
     nameOrAge.appendChild(insideNameAgeTag);
   }
   const userAdress = document.querySelector(".user-adress");
-  userAdress.innerText = info[0][info.length];
+  userAdress.innerText = topInfo.at(-1);
 
-  const liClassNames = ["bold-info", "aux-text"];
-};
+  // // card Bottom
 
-makeCard(info);
+  const cardBottomSec = document.querySelector(
+    `.${insideMainClassNames.at(-1)}`
+  );
+
+  const insideCardBttomLi = "span";
+  const liClass = "user-info-li-item";
+  const spanClasses = ["bold-info", "aux-text"];
+  const bottomInfo = [
+    ["80K", "Followers"],
+    ["803K", "Likes"],
+    ["1.4K", "Photos"],
+  ];
+
+  const ul = document.createElement("ul");
+  ul.classList.add("user-info-list");
+  cardBottomSec.appendChild(ul);
+
+  for (let i = 0; i < bottomInfo.length; i++) {
+    const li = document.createElement(`li`);
+    li.classList.add(`${liClass}`);
+    for (let j = 0; j < bottomInfo[i].length; j++) {
+      const liSpan = document.createElement(`${insideCardBttomLi}`);
+      li.appendChild(liSpan);
+      liSpan.innerText = `${bottomInfo[i][j]}`;
+      liSpan.classList.add(`${spanClasses[j]}`);
+    }
+    ul.appendChild(li);
+  }
+
+  // // footer
+  // const ulFooter = document.querySelector("#footer-list");
+  // // const l = "li";
+  // const textInFooter = [
+  //   [
+  //   "Challenge by Frontend Mentor",
+  //   ["href", "https://www.frontendmentor.io?ref=challenge"]],
+  //   [
+  //     "Coded by Bruno Moleta Santos",
+  //     ["href", "https://github.com/brunomoleta"],
+  //   ],
+  // ];
+
+  // for (let i = 0; i < textInFooter.length; i++) {
+  //   const li = document.createElement("li");
+  //   for (let j=0; j<src.length;j++){
+  //     li.innerText = `${textInFooter[0][i]}`;
+  //   }
+  //   ulFooter.appendChild(li);
+  //   // li.setAttribute(`${src[i][j]}`)
+  //   // }
+  
+}
+makeCard();

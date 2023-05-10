@@ -112,3 +112,7 @@ hr {
 strong {
   font-weight: unset;
 }
+
+address{
+  font-style: normal;
+}

@@ -19,25 +19,17 @@
 
 }
 
-body {
-  font-size: var(--large-font);
-  font-family: "Kumbh Sans", sans-serif;
-}
-/* 
-- Mobile: 375px
-- Desktop: 1440px */
 
 
 .attribution {
+  color: var(--desatBlue);
+  position: absolute;
+  bottom: 40px;
   font-size: 1.1rem;
   text-align: center;
 }
 
-/* .attribution a {
-  color: hsl(228, 45%, 44%);
-} */
-
-address{
-  font-style: normal;
+a:hover {
+  color: var(--desatBlue);
+  font-weight: var(--bold-font);
 }
-

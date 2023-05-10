@@ -1,0 +1,32 @@
+body {
+  background-color: var(--darkCyan);
+}
+
+.card {
+  background-color: white;
+}
+/* Top part of the card */
+.card-top::before {
+  background-color: var(--card-cyan);
+}
+
+.user-adress,
+.user-age,
+.aux-text {
+  color: var(--darkGray);
+}
+
+.user-name,
+.bold-info {
+  color: var(--desatBlue);
+}
+
+.card-top::after {
+  background-color: var(--light-grey);
+}
+
+/* bottom part of the card */
+
+a {
+  color: var(--light-grey);
+}

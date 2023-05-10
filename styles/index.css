@@ -4,11 +4,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  background-color: var(--darkCyan);
 }
 
 .card {
-  background-color: white;
   gap: 1rem;
   position: relative;
   box-shadow: 4px 4.5px 10px 3px var(--boxShadow);
@@ -35,13 +33,13 @@ body {
 }
 
 /* Top part of the card */
-#card-bg-inside {
-  background-color: var(--card-cyan);
+.card-top::before {
+  content: "";
   width: var(--card-width);
   height: 14rem;
   position: absolute;
-  top: 0;
-  opacity: 0.99;
+  top: -104px;
+  z-index: -1;
   border-radius: var(--card-radius);
   border-end-start-radius: 0;
   border-end-end-radius: 0;
@@ -69,41 +67,18 @@ body {
 }
 
 .user-adress {
-  font-size: var(--small-font);
   margin-bottom: 2.5rem;
-}
-
-.user-adress,
-.user-age,
-.aux-text {
-  color: var(--darkGray);
-}
-
-.user-name,
-.bold-info {
-  font-weight: var(--bold-font);
-  color: var(--desatBlue);
-  font-size: var(--large-font);
 }
 
 .card-top::after {
   content: "";
   width: var(--card-width);
   height: 0.2rem;
-  background-color: var(--light-grey);
   border-radius: 4px;
   border: 1px solid transparent;
 }
 
 /* bottom part of the card */
-
-.user-adress {
-  font-size: var(--small-font);
-}
-
-.aux-text {
-  font-size: var(--smaller-font);
-}
 
 .user-info-list {
   min-width: 100%;
@@ -117,8 +92,4 @@ body {
   justify-content: center;
   align-items: center;
   width: 6rem;
-}
-
-a {
-  color: var(--light-grey);
 }

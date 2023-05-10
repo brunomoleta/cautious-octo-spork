@@ -1,0 +1,29 @@
+body {
+  font-size: var(--large-font);
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.user-adress {
+  font-size: var(--small-font);
+}
+
+.aux-text {
+  font-size: var(--smaller-font);
+}
+
+.user-name,
+.bold-info {
+  font-weight: var(--bold-font);
+  color: var(--desatBlue);
+  font-size: var(--large-font);
+}
+
+a {
+  color: var(--light-grey);
+}
+
+.user-adress,
+.user-age,
+.aux-text {
+  color: var(--darkGray);
+}
