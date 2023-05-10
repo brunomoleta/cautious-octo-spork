@@ -22,7 +22,7 @@ Frontend Mentor helps you improve your coding skills by building realistic proje
 
 ### The challenge
 
-- Build a user card using Javascript to create it's tags and embedded texts. At first it was given a base HTML to work on. I decided to put all this data on arrays so I could work exclusively on Javascript.
+- Build a user card using Javascript to create tags and embedded texts. At first, it's given a base HTML to work on. I put all this data on arrays to work exclusively on Javascript.
 
 ### Screenshot
 
