@@ -74,7 +74,7 @@ figcaption {
   display: none;
 }
 
-button{
+button {
   all: initial;
   outline: revert;
 }
@@ -82,7 +82,6 @@ button{
 button,
 a {
   cursor: pointer;
-
 }
 
 a {
@@ -94,7 +93,7 @@ a {
 
 h1 {
   font-size: inherit;
-  font-weight: inherit; 
+  font-weight: inherit;
 }
 
 ul {
@@ -113,10 +112,15 @@ strong {
   font-weight: unset;
 }
 
-address{
+address {
   font-style: normal;
 }
 
 .sr-only {
-  display: none;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

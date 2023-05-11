@@ -105,6 +105,7 @@ const makeCard = () => {
 
   const profileStats = document.querySelector(".card-bottom>h2");
   profileStats.innerText = "Profile Statistics";
+  profileStats.classList.add(`${insideMainClassNames[0]}`)
 
   for (let i = 0; i < bottomInfo.length; i++) {
     const unList = document.querySelector(`.${insideBottomSectionClasses[1]}`);
